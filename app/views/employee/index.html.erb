@@ -1,0 +1,38 @@
+<h1> Lists </h1>
+<p class="error"><%= flash[:error] %></p>
+<table border="1">
+  <tr>
+    <th>Serial_no</th>
+    <th>Email_id</th>
+    <th>Created_on</th>
+    <th>Department</th>
+    <th>Forward</th>
+    <th>Category</th>
+    <th>Group_Head</th>
+    <th>Requisition_By</th>
+    <th>Handled_by</th>
+    <th>Employee_id</th>
+    <th>Status</th>
+  </tr>
+  
+  <% @emps.each do |emp|  %>
+    <tr>  <td><%= emp.id  %></td>
+      <td><%=link_to emp.email_id, emp  %></td>
+      <td><%= emp.created_at  %></td>
+      <td><%= emp.department  %></td>
+      <td><%= emp.forwards  %></td>
+      <td><%= emp.category  %></td>
+      <td><%= emp.group_head  %></td>
+      <td><%= emp.requisition_by  %></td>
+      <td><%= emp.handled_by  %></td>
+      <td><%= emp.id  %></td>
+      <td><%= emp.status.object_id  %></td>
+      
+    </tr>
+      
+  <% end %>
+</table>
+<%= link_to 'New', new_employee_path %>
+  
+  
+

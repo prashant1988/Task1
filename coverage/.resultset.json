@@ -1,0 +1,75 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/prashant/rails/Details/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/prashant/rails/Details/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/prashant/rails/Details/app/helpers/employee_helper.rb": [
+        1,
+        null
+      ],
+      "/home/prashant/rails/Details/app/controllers/employee_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/prashant/rails/Details/app/models/employee.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1337840328
+  }
+}

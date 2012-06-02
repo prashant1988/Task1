@@ -47,10 +47,7 @@
          <br/>    <br/>
 
 
-         <b>Status</b>
-
-         <%= emp.radio_button :status, "created" %> 1
-         <%= emp.radio_button :status,"updated"%> 2 <br>
+     <%= emp.hidden_field :status, :value=> '0' %>
 
          <%= emp.submit%>
 

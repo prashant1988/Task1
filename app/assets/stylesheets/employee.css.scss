@@ -4,6 +4,7 @@
 
 h1
 {
+  text-decoration: blink;
   color:orange;
   text-align:center;
 }
@@ -12,3 +13,11 @@ p
   font-family:"Times New Roman";
   font-size:20px;
 }
+
+#header, #footer {
+
+  float:left;
+  padding:15px 0;
+  width:100%;
+}
+

@@ -15,3 +15,15 @@ body
 {
     background: gray;
 }
+
+#header, #footer {
+
+    float:left;
+    padding:15px 0;
+    width:100%;
+}
+
+body{
+    background: #F0F8FF;
+
+}

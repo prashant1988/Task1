@@ -1,6 +1,21 @@
 <h1> Lists </h1>
 <p class="error"><%= flash[:error] %></p>
-<table border="1">
+<%= will_paginate  @emps %>
+
+
+<div align="right">
+
+  <%= form_tag :controller=>'employee', :action=>'search', :method=> :get, :remote=>'true' do |src| %>
+   <%= text_field_tag 'department'  %>
+    <%= submit_tag "search" %>
+   <%end%>
+ </div>
+
+  <br/>
+
+
+<br/>
+<table border="1" align="center">
   <tr>
     <th>Serial_no</th>
     <th>Email_id</th>
@@ -12,7 +27,12 @@
     <th>Requisition_By</th>
     <th>Handled_by</th>
     <th>Employee_id</th>
-    <th>Status</th>
+    <th>status</th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+
   </tr>
   
   <% @emps.each do |emp|  %>
@@ -26,13 +46,16 @@
       <td><%= emp.requisition_by  %></td>
       <td><%= emp.handled_by  %></td>
       <td><%= emp.id  %></td>
-      <td><%= emp.status.object_id  %></td>
+      <td><%= emp.status  %></td>
+      <td><%= link_to 'show',emp   %></td>
+      <td><%= link_to 'edit',edit_employee_path(emp)%>
+      <td><%= link_to 'destroy ', emp,:confirm=>'Are you sure?', method:  :delete%>
       
     </tr>
       
   <% end %>
 </table>
-<%= link_to 'New', new_employee_path %>
+<b><%= link_to 'Enter new details', new_employee_path %></b>
   
   
 

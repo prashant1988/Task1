@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Details</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "global", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+      <title>Details</title>
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%= stylesheet_link_tag    "global", :media => "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
 </head>
-<body>
+
+<div id="container" style="width:1350px ">
+
+  <div id="header" style="background-color:#FFA500;">
+     <h2 align= "center">Welcome in Employee details form</h2>
+  </div>
+
+ <body>
+    <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <% end %>
+</div>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 
 <%= yield %>
 
+   <br/><br/><br/><br/><br/><br/>
+
+
+<div align="right">
+        <a href="http://guides.rubyonrails.org/">
+         <img src="/assets/R.png" width="75" height="75"></a>
+      <a href="http://www.gmail.com">
+         <img src="/assets/g+.jpeg" width="75" height="75"></a>
+      <a href="http://ruby.railstutorial.org/">
+        <img src="assets/R1.png" width="75" height="75">
+      </a> 
+</div>
+
+
+
+
+          <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;height:50px ">
+            Copyright © prashantmishra.com</div>
+ </div>
 </body>
 </html>

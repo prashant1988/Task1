@@ -1,3 +1,5 @@
+
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
@@ -11,6 +13,8 @@ gem 'therubyracer'
 gem 'uuid'
 gem 'rspec-rails'
 gem 'simplecov'
+gem 'will_paginate'
+gem "devise"
 
 # Gems used only for assets and not required
 # in production environments by default.

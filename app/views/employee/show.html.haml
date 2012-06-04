@@ -1,0 +1,39 @@
+%h1 Details
+%center
+  %p
+    %b Serial_no:
+    = @emp.id
+
+  %p
+    %b Create_at:
+    = @emp.created_at
+  %p
+    %b Email_id:
+    = @emp.email_id
+  %p
+    %b password:
+    = @emp.uuid
+  %p
+    %b Handled_by:
+    = @emp.handled_by
+  %p
+    %b Emp_id:
+    = @emp.id
+  %p
+    %b Department:
+    = @emp.department
+  %p
+    %b Forwards:
+    = @emp.forwards
+  %p
+    %b Group_head:
+    = @emp.group_head
+  %p
+    %b Requisition_By:
+    = @emp.requisition_by
+  %p
+    %b Status:
+    = @emp.status
+
+    = @emp.id
+= link_to 'index', employee_index_path

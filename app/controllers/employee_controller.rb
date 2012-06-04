@@ -36,6 +36,7 @@ class EmployeeController < ApplicationController
   end
 
 
+
   def show
    @emp=Employee.find(params[:id])
   end

@@ -1,0 +1,38 @@
+%h1 Search result
+- if (@emp.length==0)
+  %p
+    %h3 There is no related data please enter correct data
+- else
+  %table{:align=>"center",:border=>"1"}
+    %tr
+      %th Serial_no
+      %th Email_id
+      %th Created_on
+      %th Department
+      %th Forward
+      %th Category
+      %th Group_Head
+      %th Requisition_By
+      %th Handled_by
+      %th Employee_id
+      %th status
+      %th
+      %th
+      %th
+    - @emp.each do |emp|
+      %tr
+        %td= emp.id
+        %td=link_to emp.email_id, emp
+        %td= emp.created_at
+        %td= emp.department
+        %td= emp.forwards
+        %td= emp.category
+        %td= emp.group_head
+        %td= emp.requisition_by
+        %td= emp.handled_by
+        %td= emp.id
+        %td= emp.status
+        %td= link_to 'show',emp
+        %td= link_to 'edit',edit_employee_path(emp)
+        %td= link_to 'destroy ', emp,:confirm=>'Are you sure?', method:  :delete
+= link_to 'back', employee_index_path

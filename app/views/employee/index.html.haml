@@ -1,0 +1,42 @@
+%h1 Lists
+%p.error= flash[:error]
+= will_paginate  @emps
+%div{:align => "right"}
+  = form_tag :controller=>'employee', :action=>'search', :method=> :get do |src|
+    = text_field_tag 'department'
+    = submit_tag "search"
+%br/
+%br/
+%table{:align => "center", :border => "1"}
+  %tr
+    %th Serial_no
+    %th Email_id
+    %th Created_on
+    %th Department
+    %th Forward
+    %th Category
+    %th Group_Head
+    %th Requisition_By
+    %th Handled_by
+    %th Employee_id
+    %th
+    %th
+    %th
+  - @emps.each do |emp|
+    %tr
+      %td= emp.id
+      %td= link_to emp.email_id, emp
+      %td= emp.created_at
+      %td= emp.department
+      %td= emp.forwards
+      %td= emp.category
+      %td= emp.group_head
+      %td= emp.requisition_by
+      %td= emp.handled_by
+      %td= emp.id
+      %td= link_to 'show',emp
+      %td
+        = link_to 'edit',edit_employee_path(emp)
+        %td
+          = link_to 'destroy ', emp,:confirm=>'Are you sure?', method:  :delete
+%b= link_to 'Enter new details', new_employee_path

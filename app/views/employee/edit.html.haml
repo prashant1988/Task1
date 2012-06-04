@@ -1,0 +1,46 @@
+%h1 Edit
+= form_for @emp do |emp|
+  %b Email_id
+  = emp.text_field :email_id
+  %br/
+  %br/
+  %b Create_at
+  = emp.date_select :created_at
+  %br/
+  %br/
+  %b department
+  = emp.select(:department,["HRA","ADMIN","TESTER","DEVELOPER"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  %br/
+  %br
+  %b Forwarded_to
+  = emp.select(:forwards,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  %br/
+  %br/
+  %b Category
+  = emp.select(:category, ["Relyonist","Client","Customer"],:prompt =>'select', :class=>'space_button quote_request_form' )
+  %br/
+  %br/
+  %b Group_Head
+  = emp.select(:group_head,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  %br/
+  %br/
+  %b Requisition_By
+  = emp.select(:requisition_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  %br/
+  %br/
+  %b Handled_By
+  = emp.select(:handled_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  %br/
+  %br/
+  = emp.hidden_field :status, :value=>'1'
+  = emp.submit
+
+
+
+
+
+
+        
+        
+        
+        

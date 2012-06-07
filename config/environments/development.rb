@@ -45,9 +45,9 @@ Details::Application.configure do
       :address               => 'smtp.gmail.com',
       :port                  => 587,
       :tls                   => true,
-      :domain                => 'gowdanar.com', #you can also use google.com
+      :domain                => 'gmail.com', #you can also use google.com
       :authentication        => :plain,
-      :user_name             => 'xyz@gmail.com',
-  :password                  => 'xxxxxx'
+      :user_name             => 'smartmishra007@gmail.com',
+  :password                  => '########'
   }
 end

@@ -21,30 +21,44 @@
           <%
             end
           %>
+
           var category = [];
           <%
             category=Employee.catg
             category.each do |cat|
-             category.push("<%= cat >");
-             end
           %>
+
+             category.push("<%= cat %>");
+           <%
+             end
+           %>
+
+           var manager = [];
+          <% manager=Employee.mang
+             manager.each do |mang|
+          %>
+              manager.push("<%= mang %>");
+          <%
+            end
+          %>
+
 
         $("input#autocomplete1").autocomplete({
             source: department
         });
           $("input#autocomplete2").autocomplete({
-              source: ["srinivas","ramappa","samar","vineeth"]
+              source: manager
           });
           $("input#autocomplete3").autocomplete({
-              source: ["Relyonist","Client","Customer"]
+              source: category
           });
           $("input#autocomplete4").autocomplete({
-              source: ["srinivas","ramappa","samar","vineeth"]
+              source: manager
           });
           $("input#autocomplete5").autocomplete({
-              source: ["srinivas","ramappa","samar","vineeth"]
+              source: manager
           });$("input#autocomplete6").autocomplete({
-              source: ["srinivas","ramappa","samar","vineeth"]
+              source: manager
           });
       });
   </script>

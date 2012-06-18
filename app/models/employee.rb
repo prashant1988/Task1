@@ -29,14 +29,17 @@ class Employee < ActiveRecord::Base
   end
 
 
-  #def self.manger
-  #  mang1=Employee.select(:forwards||:group_head||:requisition_by||:handled_by).uniq
-  #  mang_array=[]
-  #  mang1.each do |m|
-  #    mang_array.push(d[:forwards||:group_head||:requisition_by||:handled_by])
-  #  end
-  #  return mang_array
-  #end
+  def self.mang
+    mang1=Employee.find_by_sql("select distinct forwards from employees
+                        union select distinct group_head from employees
+                        union  select distinct handled_by from employees
+                        union select distinct requisition_by from employees;")
+    mang_array=[]
+    mang1.each do |m|
+      mang_array.push(m[:forwards])
+    end
+    return mang_array
+  end
 
 end
 

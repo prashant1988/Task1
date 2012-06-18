@@ -1,3 +1,4 @@
+
 %h1 Please Fill the details
 %h1
   %p.error= flash[:error]
@@ -6,33 +7,51 @@
   =emp.text_field :email_id
   %br/
   %br/
+
+
+
   %b Create_at
   = emp.date_select :created_at
   %br/
   %br/
+
+
   %b department
-  = emp.select(:department,["HRA","ADMIN","TESTER","DEVELOPER"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  = emp.text_field :department, :id =>"autocomplete1"
+
+  =# emp.select(:department,["HRA","ADMIN","TESTER","DEVELOPER"] , :prompt => ' ',:class => 'space_bottom quote_request_form')
   %br/
   %br/
   %b Forwarded_to
-  = emp.select(:forwards,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  =emp.text_field :forwards, :id=>"autocomplete2"
+  -#%input#autocomplete2/
+  =# emp.select(:forwards,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
   %br/
   %br/
   %b Category
-  = emp.select(:category, ["Relyonist","Client","Customer"],:prompt =>'select', :class=>'space_button quote_request_form' )
+  =emp.text_field :category, :id=>"autocomplete3"
+  =#%input#autocomplete3/
+  =# emp.select(:category, ["Relyonist","Client","Customer"],:prompt =>'select', :class=>'space_button quote_request_form' )
   %br/
   %br/
   %b Group_Head
-  = emp.select(:group_head,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  =emp.text_field :group_head, :id=>"autocomplete4"
+  =#%input#autocomplete4/
+  =# emp.select(:group_head,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
   %br/
   %br
   %b Requisition_By
-  = emp.select(:requisition_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  =emp.text_field :requisition_by, :id=>"autocomplete5"
+  =#%input#autocomplete5/
+  =# emp.select(:requisition_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
   %br/
   %br/
   %b Handled_By
-  = emp.select(:handled_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
+  =emp.text_field :handled_by, :id=>"autocomplete6"
+  =#%input#autocomplete6/
+  =# emp.select(:handled_by,["srinivas","ramappa","samar","vineeth"] , :prompt => 'Select',:class => 'space_bottom quote_request_form')
   %br/
   %br/
   = emp.hidden_field :status, :value=> '0'
   = emp.submit
+

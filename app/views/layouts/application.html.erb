@@ -6,22 +6,66 @@
       <%= stylesheet_link_tag    "global", :media => "all" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var department = [];
+          <%
+            department = Employee.dept
+            department.each do |dept|
+           %>
+            department.push("<%= dept%>");
+
+          <%
+            end
+          %>
+          var category = [];
+          <%
+            category=Employee.catg
+            category.each do |cat|
+             category.push("<%= cat >");
+             end
+          %>
+
+        $("input#autocomplete1").autocomplete({
+            source: department
+        });
+          $("input#autocomplete2").autocomplete({
+              source: ["srinivas","ramappa","samar","vineeth"]
+          });
+          $("input#autocomplete3").autocomplete({
+              source: ["Relyonist","Client","Customer"]
+          });
+          $("input#autocomplete4").autocomplete({
+              source: ["srinivas","ramappa","samar","vineeth"]
+          });
+          $("input#autocomplete5").autocomplete({
+              source: ["srinivas","ramappa","samar","vineeth"]
+          });$("input#autocomplete6").autocomplete({
+              source: ["srinivas","ramappa","samar","vineeth"]
+          });
+      });
+  </script>
+
 </head>
 
-<div id="container" style="width:1350px ">
 
-  <div id="header" style="background-color:#FFA500;">
-     <h2 align= "center">Welcome in Employee details form</h2>
-  </div>
 
  <body>
+ <div id="container" style="width:1350px ">
+
+   <div id="header" style="background-color:#FFA500;">
+     <h2 align= "center">Welcome in Employee details form</h2>
+   </div>
     <% if user_signed_in? %>
         Signed in as <%= current_user.email %>. Not you?
         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <% else %>
         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
     <% end %>
-</div>
+    </div>
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
@@ -46,6 +90,6 @@
 
           <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;height:50px "> <br/>
             Copyright © prashantmishra.com</div>
- </div>
+
 </body>
 </html>

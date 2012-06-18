@@ -9,17 +9,19 @@ class EmployeeController < ApplicationController
 
   def new
     @emp= Employee.new
+
   end
 
 
   def create
+
       @emp=Employee.new(params[:employee])
          u=UUID.new
        @emp.uuid=u.generate[1,7]
     if @emp.save
        redirect_to  employee_index_path
     else
-      flash.now[:error] = "Could not save data"
+      flash.now[:error] = "Can't  save data"
       render :action => "new"
     end
 

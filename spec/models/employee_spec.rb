@@ -1,4 +1,4 @@
-require "spec_helper"
+  require "spec_helper"
 
 describe Employee do
 
@@ -56,7 +56,7 @@ describe Employee do
      end
 
 
-     describe "when group_head is not present" do
+   describe "when group_head is not present" do
     before {@emp.group_head=" "}
      it{should_not be_valid}
      end
@@ -82,5 +82,28 @@ describe Employee do
   end
 
 
+  describe "when dept_array return department" do
+    it " should be return department" do
+    @emp.save
+     @dept2=Employee.dept
+     @dept2.should eq(["HRA"])
+    end
+  end
 
-      end
+  it "should be return catogery's name"  do
+  @emp.save
+      @catg2=Employee.catg
+     @catg2.should eq(["client"])
+
+  end
+
+
+  it "should be return a manager's name"  do
+  @emp.save
+   @mang2=Employee.mang
+  puts @mang2.inspect
+  @mang2.should eq(["vineeth","srinivas"])
+
+  end
+
+  end

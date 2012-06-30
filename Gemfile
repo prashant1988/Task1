@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,6 +16,7 @@ gem 'simplecov'
 gem 'will_paginate'
 gem "devise"
 gem 'haml-rails'
+gem 'brakeman'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

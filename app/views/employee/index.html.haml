@@ -1,3 +1,4 @@
+
 %h1 Lists
 %p.error= flash[:error]
 = will_paginate  @emps
@@ -18,11 +19,12 @@
     %th Group_Head
     %th Requisition_By
     %th Handled_by
-    %th Employee_id
-    %th
-    %th
-    %th
-  - @emps.each do |emp|
+    %th show
+    %th update
+    %th delete
+
+  - @emps.each do |emp,i|
+
     %tr
       %td= emp.id
       %td= link_to emp.email_id, emp
@@ -33,10 +35,10 @@
       %td= emp.group_head
       %td= emp.requisition_by
       %td= emp.handled_by
-      %td= emp.id
-      %td= link_to 'show',emp
+      %td= link_to image_tag("arrow-left.png",:width=>20),emp
       %td
-        = link_to 'edit',edit_employee_path(emp)
+        = link_to image_tag("update.png",:width=>20),edit_employee_path(emp)
         %td
-          = link_to 'destroy ', emp,:confirm=>'Are you sure?', method:  :delete
+          = link_to image_tag("Delete-icon.png",:width=>20),emp,:confirm=>'Are you sure?', method:  :delete
+        //i=i+1
 %b= link_to 'Enter new details', new_employee_path

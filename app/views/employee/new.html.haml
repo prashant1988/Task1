@@ -1,3 +1,11 @@
+- if @emp.errors.any?
+  #errorExplanation
+    %h2
+      = pluralize(@emp.errors.count, "error")
+      prohibited this asset from being saved:
+    %ul
+      - @emp.errors.full_messages.each do |msg|
+        %li= msg
 
 %h1 Please Fill the details
 %h1
@@ -8,13 +16,10 @@
   %br/
   %br/
 
-
-
   %b Create_at
   = emp.date_select :created_at
   %br/
   %br/
-
 
   %b department
   = emp.text_field :department, :id =>"autocomplete1"

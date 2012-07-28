@@ -1,5 +1,5 @@
 class EmployeeController < ApplicationController
-  before_filter :authenticate_user!
+ before_filter :authenticate_user!
 
   def index
 
@@ -20,6 +20,7 @@ class EmployeeController < ApplicationController
        @emp.uuid=u.generate[1,7]
     if @emp.save
        redirect_to  employee_index_path
+      flash[:error] ="new data created"
     else
       flash.now[:error] = "Can't  save data"
       render :action => "new"
@@ -51,8 +52,10 @@ class EmployeeController < ApplicationController
     @emp=Employee.find(params[:id])
     if @emp.update_attributes(params[:employee])
       redirect_to :action=>'index'
+      flash[:error] ="Values updated "
     else
       render 'edit'
+      flash[:error]= "update properly"
     end
   end
 

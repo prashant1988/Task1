@@ -1,7 +1,11 @@
 Details::Application.routes.draw do
+ # map.resources :employees
 
 
-  devise_for :users
+  devise_for :users  do
+    get 'logout' => 'devise/sessions#destroy'
+
+  end
 
   resources :employee do
  post "search", :on=>:collection

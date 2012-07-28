@@ -17,6 +17,8 @@ gem 'will_paginate'
 gem "devise"
 gem 'haml-rails'
 gem 'brakeman'
+
+#gem 'sinatra'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,6 +29,14 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem "email_spec"
 end
 
 gem 'jquery-rails'

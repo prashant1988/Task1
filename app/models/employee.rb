@@ -4,8 +4,8 @@ class Employee < ActiveRecord::Base
 
 
 
-  validates  :department ,:forwards , :category,:group_head,
-            :requisition_by, :handled_by,       :presence=> true
+  #validates  :department ,:forwards , :category,:group_head,
+            #:requisition_by, :handled_by,       :presence=> true
 
    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
    validates :email_id, presence: true, format: { with: VALID_EMAIL_REGEX }
